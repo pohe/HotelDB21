@@ -1,0 +1,68 @@
+﻿@page
+@model HotelRazor21_ADO.Pages.Rooms.GetAllRoomsModel
+@{
+    ViewData["Title"] = "GetAllRooms";
+
+}
+
+<p>
+    <a asp-page="/Rooms/Create">Create New Rooms</a>
+</p>
+<br />
+<h4 style="color:red "> List of all rooms</h4>
+<form>
+    <p>
+        Search: <input type="text" asp-for="MaxAmount" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                RoomNr
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Pris
+            </th>
+            <th>
+                Hotel nr
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @if (Model.Rooms.Count() != 0)
+        {
+            @foreach (var item in Model.Rooms)
+            {
+                <tr>
+                    <td>
+                        @item.RoomNr
+                    </td>
+                    <td>
+                        @item.Types
+                    </td>
+                    <td>
+                        @item.Pris
+                    </td>
+                    <td>
+                        @item.HotelNr
+                    </td>
+                    
+
+                    <td>
+                        <a asp-page="EditRoom" asp-route-id="@item.RoomNr">Edit</a>|
+                        <a asp-page="DetailRoom" asp-route-id="@item.RoomNr">Details</a> |
+                        @*<a asp-page="Delete" asp-route-id="@item.SaleId">Delete</a>*@
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+

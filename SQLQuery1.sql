@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[Room]  WITH CHECK ADD  CONSTRAINT [FK_Hotel_Rooms] FOREIGN KEY([Hotel_No])
+REFERENCES [dbo].[Hotel] ([Hotel_No])
+ON UPDATE CASCADE
