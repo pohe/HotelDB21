@@ -26,6 +26,10 @@ namespace RazorHotelDBasync.Services
         {
         }
 
+        public HotelService(string connnectionString) : base(connnectionString)
+        {
+        }
+
 
         public async Task<List<Hotel>> GetAllHotelAsync()
         {

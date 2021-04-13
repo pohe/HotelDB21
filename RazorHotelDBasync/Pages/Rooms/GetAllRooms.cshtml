@@ -58,7 +58,7 @@
                 <td>
                     <a asp-page="Edit" asp-route-rid="@item.RoomNr" asp-route-hid="@item.HotelNr">Edit</a>|
                     <a asp-page="DetailRoom" asp-route-id="@item.RoomNr">Details</a> |
-                    <a asp-page="Delete" asp-route-id="@item.RoomNr">Delete</a>
+                    <a asp-page="Delete" asp-route-rid="@item.RoomNr" asp-route-hid="@item.HotelNr">Delete</a>
                     <form method="post">
                         <button asp-page-handler="Delete" asp-route-rid=@item.RoomNr asp-route-hid=@item.HotelNr
                                 class="btn btn-danger btn-group-lg pull-right">

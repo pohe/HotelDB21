@@ -1,0 +1,39 @@
+﻿@page
+@model RazorHotelDBasync.Pages.Rooms.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+<h3>Delete</h3>
+
+<h3>Are you sure you want to delete this rooms ?</h3>
+<div>
+    <hr />
+    <form method="post">
+
+        <div class="form-group">
+            <label asp-for="@Model.Room.HotelNr" class="control-label"></label>
+            <input asp-for="@Model.Room.HotelNr" readonly class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Room.RoomNr" class="control-label"></label>
+            <input asp-for="@Model.Room.RoomNr" readonly class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Room.Types" class="control-label"></label>
+            <input asp-for="@Model.Room.Types" readonly class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Room.Pris" class="control-label"></label>
+            <input asp-for="@Model.Room.Pris" readonly class="form-control" />
+
+        </div>
+        <div class="@(Model.InfoText.Contains("Error") ? "alert alert-danger":"")" role="alert">
+            @(Model.InfoText.Contains("Error") ? Model.InfoText :"")
+        </div>
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        @*<a asp-page="GetAllRooms">Back to List</a>*@
+    </form>
+</div>

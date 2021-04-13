@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace RazorHotelDBasync.Models
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Hotel
     {
         public int HotelNr { get; set; }
@@ -14,7 +17,16 @@ namespace RazorHotelDBasync.Models
         public Hotel()
         {
         }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hotelNr">
+        /// </param>
+        /// <param name="navn">
+        /// </param>
+        /// <param name="adresse">
+        /// </param>
         public Hotel(int hotelNr, string navn, string adresse)
         {
             HotelNr = hotelNr;

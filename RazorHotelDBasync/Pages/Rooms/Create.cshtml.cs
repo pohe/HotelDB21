@@ -20,6 +20,9 @@ namespace RazorHotelDBasync.Pages.Rooms
         IRoomService roomService;
         //IHotelService hotelService;
 
+        [BindProperty] 
+        public RoomType TheRoomType { get; set; }
+
         [BindProperty]
         public bool createResult { get; set; }
 
@@ -41,10 +44,18 @@ namespace RazorHotelDBasync.Pages.Rooms
             {
                 return BadRequest(ModelState);
             }
-            
+
+            Room.Types = TheRoomType.ToString()[0];
             createResult = await roomService.CreateRoomAsync(HotelNr, Room);
-            //return RedirectToPage("GetAllRooms", HotelNr);
-            return Page();
+            if (createResult)
+                return RedirectToPage("GetAllRooms", "MyRooms", new { cid = HotelNr });
+                //return Page();
+            else
+            {
+                return Page();
+            }
+
+            
         }
     }
 }

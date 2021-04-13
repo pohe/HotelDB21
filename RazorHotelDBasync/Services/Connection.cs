@@ -17,6 +17,12 @@ namespace RazorHotelDBasync.Services
             connectionString = Configuration["ConnectionStrings:DefaultConnection"];
         }
 
+        public Connection(string connectionString)
+        {
+            Configuration = null;
+            this.connectionString = connectionString;
+        }
+
 
     }
 }
